@@ -1,0 +1,34 @@
+{
+  "name": "collaborative-editor-server",
+  "version": "1.0.0",
+  "description": "Local-first collaborative editor API and WebSocket sync server",
+  "main": "index.js",
+  "scripts": {
+    "free-port": "node scripts/free-port.js",
+    "dev": "node scripts/free-port.js && nodemon index.js",
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "lib0": "^0.2.109",
+    "mongoose": "^9.7.4",
+    "ws": "^8.18.1",
+    "y-protocols": "^1.0.6",
+    "yjs": "^13.6.27",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
