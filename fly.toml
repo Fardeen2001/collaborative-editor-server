@@ -1,5 +1,7 @@
-# fly.toml app configuration file for collaborative-editor-server
-# See https://fly.io/docs/reference/configuration/
+# fly.toml app configuration file generated for collaborative-editor-server on 2026-07-09T05:37:14Z
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
 
 app = 'collaborative-editor-server'
 primary_region = 'iad'
@@ -7,8 +9,8 @@ primary_region = 'iad'
 [build]
 
 [env]
-  NODE_ENV = 'production'
   HOST = '0.0.0.0'
+  NODE_ENV = 'production'
   PORT = '8080'
 
 [http_service]
