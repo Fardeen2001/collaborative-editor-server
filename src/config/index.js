@@ -1,4 +1,4 @@
-const { required, parseIntEnv, parseFloatEnv, parseList } = require('./env');
+const { required, parseIntEnv, parseFloatEnv, parseList, parseTrustProxy } = require('./env');
 
 const maxMessageSize = parseIntEnv('MAX_MESSAGE_SIZE', 256 * 1024);
 
@@ -9,6 +9,7 @@ const config = {
     nodeEnv: process.env.NODE_ENV || 'development',
     jsonBodyLimit: process.env.JSON_BODY_LIMIT || '1mb',
     publicUrl: process.env.PUBLIC_URL || '',
+    trustProxy: parseTrustProxy(),
   },
   cors: {
     origins: parseList('CORS_ORIGINS', parseList('CLIENT_URL', ['http://localhost:3000'])),

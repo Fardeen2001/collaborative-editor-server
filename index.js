@@ -20,6 +20,10 @@ const {
 
 const app = express();
 
+if (config.server.trustProxy) {
+  app.set('trust proxy', config.server.trustProxy);
+}
+
 app.use(helmet());
 app.use(
   cors({

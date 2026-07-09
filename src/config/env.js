@@ -28,4 +28,15 @@ function parseList(name, fallback) {
   return raw.split(',').map((item) => item.trim()).filter(Boolean);
 }
 
-module.exports = { required, parseIntEnv, parseFloatEnv, parseList };
+function parseTrustProxy() {
+  const raw = process.env.TRUST_PROXY;
+  if (raw === undefined || raw === '') {
+    return process.env.NODE_ENV === 'production' ? 1 : false;
+  }
+  if (raw === 'true' || raw === '1') return 1;
+  if (raw === 'false' || raw === '0') return false;
+  const hops = Number.parseInt(raw, 10);
+  return Number.isNaN(hops) ? false : hops;
+}
+
+module.exports = { required, parseIntEnv, parseFloatEnv, parseList, parseTrustProxy };
